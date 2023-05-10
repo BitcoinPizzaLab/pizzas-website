@@ -1,8 +1,8 @@
 'use client'
 
 import { Box } from '@chakra-ui/react'
-import { useMenuList } from './store/menu'
-import { Modal } from './components/modal'
+import { useMenuList } from './libs/store/menu'
+import { Modal } from './libs/components/modal'
 
 export default function Home() {
   const menulist = useMenuList((state) => state.menulist)

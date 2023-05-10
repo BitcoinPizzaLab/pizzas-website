@@ -1,11 +1,15 @@
 import React from 'react'
-import ReactModal from 'react-modal-resizable-draggable'
+import dynamic from 'next/dynamic'
 import './modal.css'
 interface ModalProps {
   isOpen: boolean
   close?: () => void
   children: React.ReactNode
 }
+
+const ReactModal = dynamic(() => import('react-modal-resizable-draggable'), {
+  ssr: false,
+})
 
 export const Modal = (props: ModalProps) => {
   const {
