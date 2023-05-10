@@ -1,8 +1,8 @@
 {
-  "plugins": ["@typescript-eslint"],
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended", "prettier"],
   "rules": {
-    // I suggest you add those two rules:
+    "react/react-in-jsx-scope": 0,
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error"
   }
