@@ -2,6 +2,7 @@
 
 import { Box } from '@chakra-ui/react'
 import { useMenuList } from './store/menu'
+import { Modal } from './components/modal'
 
 export default function Home() {
   const menulist = useMenuList((state) => state.menulist)
@@ -11,12 +12,18 @@ export default function Home() {
       <Box>
         {menulist.map((menu, i) => {
           return (
-            <Box w='100px' key={i}>
+            <Box onClick={menu.onClick} w='100px' key={i}>
               {menu.icon}
             </Box>
           )
         })}
       </Box>
+
+      <Modal isOpen={menulist[0].visible} close={menulist[0].onClick}>
+        <Box overflow='hidden' w='full' h='full'>
+          11
+        </Box>
+      </Modal>
     </main>
   )
 }
