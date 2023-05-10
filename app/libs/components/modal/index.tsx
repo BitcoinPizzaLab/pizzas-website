@@ -1,6 +1,7 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 import './modal.css'
+
 interface ModalProps {
   isOpen: boolean
   close?: () => void
