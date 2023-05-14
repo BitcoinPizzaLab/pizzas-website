@@ -1,5 +1,6 @@
 // import { Inter } from 'next/font/google'
 import { Providers } from './providers'
+import './libs/styles/global.css'
 import '98.css'
 
 export const metadata = {
@@ -10,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en'>
-      <body>
+      <body className='h-[100vh] w-[100vw] overflow-hidden'>
         <Providers>{children}</Providers>
       </body>
     </html>
