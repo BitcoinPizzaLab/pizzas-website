@@ -8,6 +8,7 @@ interface MenuListStore {
     icon: React.ReactElement
     visible: boolean
     onClick: () => void
+    label: string
   }[]
 }
 
