@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useRef, useState } from "react";
 import "./modal.css";
 import { Box, Flex } from "@chakra-ui/react";
@@ -43,6 +45,8 @@ export const Modal = (props: ModalProps) => {
       setDragAble(false);
     });
   }, []);
+
+  if (typeof document === "undefined") return <div>11</div>;
 
   return ReactDOM.createPortal(
     <Flex
