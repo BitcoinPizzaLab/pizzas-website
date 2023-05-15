@@ -38,18 +38,20 @@ export default function Home() {
       </SimpleGrid>
 
       <Image
+        border="5px solid #fff"
         zIndex="-1"
         alt="logo"
         position="fixed"
         left="50%"
         bottom={["25%", "50%"]}
         transform="translate(-50%, 50%)"
-        p="40px"
+        // p="40px"
         bg="#000"
         w={["80%", "40%"]}
         maxW="400px"
         h="auto"
-        src="https://pizzalabs.art/assets/logo-f295d28e.gif"
+        src="/images/activity.gif"
+        // src="https://pizzalabs.art/assets/logo-f295d28e.gif"
       />
 
       <Modal
