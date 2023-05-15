@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Center, SimpleGrid, Image, Flex } from "@chakra-ui/react";
+import { Box, Center, SimpleGrid, Image, Flex, Text } from "@chakra-ui/react";
 import { useMenuList } from "./libs/store/menu";
 import { Modal } from "./libs/components/modal";
 
@@ -19,6 +19,7 @@ export default function Home() {
               onClick={menu.onClick}
               w={["110px", "140px"]}
               cursor="pointer"
+              userSelect="none"
             >
               <Box p={["20px", "15px"]}>{menu.icon}</Box>
               <Center
@@ -85,10 +86,20 @@ export default function Home() {
         close={menulist[3].onClick}
       >
         <Flex
-          className="smokingBg"
+          gap="5"
+          flexDirection="column"
+          justifyContent="center"
           w={["90vw", "50vw"]}
-          h={["40vh", "50vh"]}
-        ></Flex>
+          h={["120px"]}
+        >
+          <Text alignSelf="center" fontSize="20px">
+            Discord will coming soon.
+          </Text>
+
+          <Box alignSelf="center">
+            <button onClick={menulist[3].onClick}>OK</button>
+          </Box>
+        </Flex>
       </Modal>
     </main>
   );
