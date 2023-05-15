@@ -46,7 +46,41 @@ export const Modal = (props: ModalProps) => {
     });
   }, []);
 
-  if (typeof document === "undefined") return <div>11</div>;
+  if (typeof document === "undefined")
+    return (
+      <Flex
+        position="absolute"
+        left="50%"
+        top="50%"
+        w="0"
+        h="0"
+        transform="translate3d(-50%, -50%, 0)"
+        overflow="visible"
+        justifyContent="center"
+        display={isOpen ? "flex" : "none"}
+      >
+        <motion.div
+          dragPropagation={false}
+          drag={dragAble}
+          dragMomentum={false}
+          className={`window self-center`}
+          animate={isOpen ? "open" : "closed"}
+          variants={variants}
+        >
+          <Box ref={dragElement} className="title-bar">
+            <Box userSelect="none" className="title-bar-text">
+              {label}
+            </Box>
+            <Box className="title-bar-controls">
+              {/* <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button> */}
+              <button onClick={close} aria-label="Close"></button>
+            </Box>
+          </Box>
+          <Box>{children}</Box>
+        </motion.div>
+      </Flex>
+    );
 
   return ReactDOM.createPortal(
     <Flex
