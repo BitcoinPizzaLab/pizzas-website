@@ -101,6 +101,28 @@ export default function Home() {
           </Box>
         </Flex>
       </Modal>
+
+      <Modal
+        label={menulist[5].label}
+        isOpen={menulist[5].visible}
+        close={menulist[5].onClick}
+      >
+        <Flex
+          gap="5"
+          flexDirection="column"
+          justifyContent="center"
+          w={["90vw", "50vw"]}
+          h={["120px"]}
+        >
+          <Text alignSelf="center" fontSize="20px">
+            Pizza Diary will coming soon.
+          </Text>
+
+          <Box alignSelf="center">
+            <button onClick={menulist[5].onClick}>OK</button>
+          </Box>
+        </Flex>
+      </Modal>
     </main>
   );
 }
