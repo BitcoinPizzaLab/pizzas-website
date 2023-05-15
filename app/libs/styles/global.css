@@ -5,5 +5,11 @@
 
 body {
     font-family: 'ChicagoFLF'!important;
-    background-color: #f7931a;
+    background-color: #f7931a!important;
+    position: relative;
+}
+
+.smokingBg {
+    background: url('/images/smoking.GIF') center no-repeat;
+    background-size: cover;
 }

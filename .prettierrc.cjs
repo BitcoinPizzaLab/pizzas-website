@@ -1,4 +1,4 @@
-{
+module.export = {
   "semi": false,
   "tabWidth": 2,
   "printWidth": 200,
