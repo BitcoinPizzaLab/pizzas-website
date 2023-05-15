@@ -18,6 +18,7 @@ export default function Home() {
               p={["0", "10px"]}
               onClick={menu.onClick}
               w={["110px", "140px"]}
+              cursor="pointer"
             >
               <Box p={["20px", "15px"]}>{menu.icon}</Box>
               <Center
