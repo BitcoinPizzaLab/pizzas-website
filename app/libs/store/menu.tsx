@@ -18,6 +18,7 @@ export const useMenuList = create(
       {
         icon: (
           <Image
+            p="8px"
             alt="Bitcoin Pizzas"
             w="full"
             src="https://pizzalabs.art/logo.png"
@@ -34,9 +35,10 @@ export const useMenuList = create(
       {
         icon: (
           <Image
+            p="4px"
             alt="Bitcoin Pizzas"
             w="full"
-            src="https://pizzalabs.art/logo.png"
+            src="/icon/believers.png"
           />
         ),
         label: "Pizza Believers",
@@ -50,9 +52,10 @@ export const useMenuList = create(
       {
         icon: (
           <Image
+            p="6px"
             alt="Bitcoin Pizzas"
             w="full"
-            src="https://pizzalabs.art/logo.png"
+            src="/icon/twitter.svg"
           />
         ),
         label: "Twitter",
@@ -64,9 +67,10 @@ export const useMenuList = create(
       {
         icon: (
           <Image
+            p="6px"
             alt="Bitcoin Pizzas"
             w="full"
-            src="https://pizzalabs.art/logo.png"
+            src="/icon/discord.svg"
           />
         ),
         label: "Discord",
@@ -79,11 +83,7 @@ export const useMenuList = create(
       },
       {
         icon: (
-          <Image
-            alt="Bitcoin Pizzas"
-            w="full"
-            src="https://pizzalabs.art/logo.png"
-          />
+          <Image p="5px" alt="Bitcoin Pizzas" w="full" src="/icon/log.png" />
         ),
         label: "Pizza Log",
         visible: false,
@@ -95,11 +95,7 @@ export const useMenuList = create(
       },
       {
         icon: (
-          <Image
-            alt="Bitcoin Pizzas"
-            w="full"
-            src="https://pizzalabs.art/logo.png"
-          />
+          <Image p="5px" alt="Bitcoin Pizzas" w="full" src="/icon/diary.png" />
         ),
         label: "Pizza Diary",
         visible: false,
