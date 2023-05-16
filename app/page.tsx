@@ -3,6 +3,7 @@
 import { Box, Center, SimpleGrid, Image, Flex, Text } from "@chakra-ui/react";
 import { useMenuList } from "./libs/store/menu";
 import { Modal } from "./libs/components/modal";
+import Link from "next/link";
 
 export default function Home() {
   const menulist = useMenuList((state) => state.menulist);
@@ -47,8 +48,8 @@ export default function Home() {
         transform="translate(-50%, 50%)"
         // p="40px"
         bg="#000"
-        w={["80%", "40%"]}
-        maxW="400px"
+        w={["80%", "60%", "40%"]}
+        maxW="800px"
         h="auto"
         src="/images/activity.gif"
         // src="https://pizzalabs.art/assets/logo-f295d28e.gif"
@@ -87,11 +88,114 @@ export default function Home() {
         isOpen={menulist[2].visible}
         close={menulist[2].onClick}
       >
-        <Flex
-          className="market"
-          w={["90vw", "50vw"]}
-          h={["40vh", "50vw"]}
-        ></Flex>
+        <Flex justifyContent="center" className="market" w={["90vw", "600px"]}>
+          <SimpleGrid
+            p={["20px", "40px"]}
+            columns={[3, 4]}
+            spacing={["20px", "40px"]}
+          >
+            <Link
+              target="_blank"
+              href="https://magiceden.io/ordinals/marketplace/bitcoin-pizzas"
+            >
+              <Image p="10px" w="full" alt="me" src="/icon/MElogo.png" />
+              <Center
+                mt="10px"
+                p="4px 8px"
+                fontSize="12px"
+                fontWeight="bold"
+                color="#fff"
+                bg="#000"
+                whiteSpace="nowrap"
+              >
+                magiceden
+              </Center>
+            </Link>
+
+            <Link
+              target="_blank"
+              href="https://ordinalswallet.com/collection/bitcoin-pizzas"
+            >
+              <Image
+                p="10px"
+                w="full"
+                alt="ordinalswallet"
+                src="/icon/ordinalswallet.svg"
+              />
+              <Center
+                mt="10px"
+                p="4px 8px"
+                fontSize="12px"
+                fontWeight="bold"
+                color="#fff"
+                bg="#000"
+                whiteSpace="nowrap"
+              >
+                ordinals
+              </Center>
+            </Link>
+            <Link
+              target="_blank"
+              href="https://gamma.io/ordinals/collections/bitcoin-pizzas"
+            >
+              <Image
+                p="10px"
+                borderRadius="21px"
+                alt="gamma"
+                src="/icon/gama.jpg"
+              />
+              <Center
+                mt="10px"
+                p="4px 8px"
+                fontSize="12px"
+                fontWeight="bold"
+                color="#fff"
+                bg="#000"
+                whiteSpace="nowrap"
+              >
+                gamma
+              </Center>
+            </Link>
+            <Link
+              target="_blank"
+              href="https://ordswap.io/collections/bitcoin-pizzas"
+            >
+              <Image
+                p="10px"
+                w="full"
+                borderRadius="21px"
+                alt="me"
+                src="/icon/ordswap.jpg"
+              />
+              <Center
+                mt="10px"
+                p="4px 8px"
+                fontSize="12px"
+                fontWeight="bold"
+                color="#fff"
+                bg="#000"
+                whiteSpace="nowrap"
+              >
+                ordswap
+              </Center>
+            </Link>
+
+            <Link href="">
+              <Image w="full" alt="me" src="/icon/marketComingSoon.png" />
+              <Center
+                mt="10px"
+                p="4px 8px"
+                fontSize="12px"
+                fontWeight="bold"
+                color="#fff"
+                bg="#000"
+                whiteSpace="nowrap"
+              >
+                Coming Soon
+              </Center>
+            </Link>
+          </SimpleGrid>
+        </Flex>
       </Modal>
 
       <Modal
