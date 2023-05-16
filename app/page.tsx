@@ -78,30 +78,20 @@ export default function Home() {
         <Flex
           className="smokingBg"
           w={["90vw", "50vw"]}
-          h={["40vh", "50vh"]}
+          h={["40vh", "50vw"]}
         ></Flex>
       </Modal>
 
       <Modal
-        label={menulist[3].label}
-        isOpen={menulist[3].visible}
-        close={menulist[3].onClick}
+        label={menulist[2].label}
+        isOpen={menulist[2].visible}
+        close={menulist[2].onClick}
       >
         <Flex
-          gap="5"
-          flexDirection="column"
-          justifyContent="center"
+          className="market"
           w={["90vw", "50vw"]}
-          h={["120px"]}
-        >
-          <Text alignSelf="center" fontSize="20px">
-            Discord will coming soon.
-          </Text>
-
-          <Box alignSelf="center">
-            <button onClick={menulist[3].onClick}>OK</button>
-          </Box>
-        </Flex>
+          h={["40vh", "50vw"]}
+        ></Flex>
       </Modal>
 
       <Modal
@@ -117,11 +107,33 @@ export default function Home() {
           h={["120px"]}
         >
           <Text alignSelf="center" fontSize="20px">
-            Pizza Diary will coming soon.
+            Discord will coming soon.
           </Text>
 
           <Box alignSelf="center">
             <button onClick={menulist[5].onClick}>OK</button>
+          </Box>
+        </Flex>
+      </Modal>
+
+      <Modal
+        label={menulist[3].label}
+        isOpen={menulist[3].visible}
+        close={menulist[3].onClick}
+      >
+        <Flex
+          gap="5"
+          flexDirection="column"
+          justifyContent="center"
+          w={["90vw", "50vw"]}
+          h={["120px"]}
+        >
+          <Text alignSelf="center" fontSize="20px">
+            Pizza Diary will coming soon.
+          </Text>
+
+          <Box alignSelf="center">
+            <button onClick={menulist[3].onClick}>OK</button>
           </Box>
         </Flex>
       </Modal>

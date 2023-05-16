@@ -21,7 +21,7 @@ export const useMenuList = create(
             p="8px"
             alt="Bitcoin Pizzas"
             w="full"
-            src="https://pizzalabs.art/logo.png"
+            src="/icon/icons8-pizza.png"
           />
         ),
         label: "Bitcoin Pizzas",
@@ -35,7 +35,7 @@ export const useMenuList = create(
       {
         icon: (
           <Image
-            p="4px"
+            p="5px"
             alt="Bitcoin Pizzas"
             w="full"
             src="/icon/believers.png"
@@ -46,6 +46,30 @@ export const useMenuList = create(
         onClick: () => {
           set((state) => {
             state.menulist[1].visible = !state.menulist[1].visible;
+          });
+        },
+      },
+      {
+        icon: (
+          <Image p="7px" alt="Bitcoin Pizzas" w="full" src="/icon/market.png" />
+        ),
+        label: "Market",
+        visible: false,
+        onClick: () => {
+          set((state) => {
+            state.menulist[2].visible = !state.menulist[2].visible;
+          });
+        },
+      },
+      {
+        icon: (
+          <Image p="5px" alt="Bitcoin Pizzas" w="full" src="/icon/diary.png" />
+        ),
+        label: "Pizza Diary",
+        visible: false,
+        onClick: () => {
+          set((state) => {
+            state.menulist[3].visible = !state.menulist[3].visible;
           });
         },
       },
@@ -77,34 +101,22 @@ export const useMenuList = create(
         visible: false,
         onClick: () => {
           set((state) => {
-            state.menulist[3].visible = !state.menulist[3].visible;
-          });
-        },
-      },
-      {
-        icon: (
-          <Image p="5px" alt="Bitcoin Pizzas" w="full" src="/icon/log.png" />
-        ),
-        label: "Pizza Log",
-        visible: false,
-        onClick: () => {
-          set((state) => {
-            state.menulist[4].visible = !state.menulist[4].visible;
-          });
-        },
-      },
-      {
-        icon: (
-          <Image p="5px" alt="Bitcoin Pizzas" w="full" src="/icon/diary.png" />
-        ),
-        label: "Pizza Diary",
-        visible: false,
-        onClick: () => {
-          set((state) => {
             state.menulist[5].visible = !state.menulist[5].visible;
           });
         },
       },
+      // {
+      //   icon: (
+      //     <Image p="5px" alt="Bitcoin Pizzas" w="full" src="/icon/log.png" />
+      //   ),
+      //   label: "Pizza Log",
+      //   visible: false,
+      //   onClick: () => {
+      //     set((state) => {
+      //       state.menulist[4].visible = !state.menulist[4].visible;
+      //     });
+      //   },
+      // },
     ],
   }))
 );
