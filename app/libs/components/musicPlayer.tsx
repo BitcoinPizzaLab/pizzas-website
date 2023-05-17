@@ -1,5 +1,7 @@
 import { Box } from "@chakra-ui/react";
 import dynamic from "next/dynamic";
+import { useEffect, useRef } from "react";
+import { ReactJkMusicPlayerInstance } from "react-jinke-music-player";
 import "react-jinke-music-player/assets/index.css";
 
 const Player = dynamic(() => import("react-jinke-music-player"), {
@@ -22,15 +24,31 @@ const audioList = [
   },
 ];
 
-export const MusicPlayer = () => {
+interface MusicPlayerProps {
+  play: boolean;
+}
+
+export const MusicPlayer = (props: MusicPlayerProps) => {
+  const { play } = props;
+  const audioInstanceRef = useRef<ReactJkMusicPlayerInstance | null>(null);
+
+  useEffect(() => {
+    if (play) {
+      audioInstanceRef.current?.play();
+    }
+  }, [play]);
+
   return (
     <Box right="20px" bottom="20px" position="absolute">
       <Player
+        getAudioInstance={(instance) => {
+          audioInstanceRef.current = instance;
+        }}
         audioLists={audioList}
         theme="dark"
         locale="en_US"
         defaultPosition={{ bottom: 0, left: 0 }}
-        preload="auto"
+        preload
         mode="full"
         autoPlay
         toggleMode={false}

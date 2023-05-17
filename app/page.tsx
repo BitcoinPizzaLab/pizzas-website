@@ -5,9 +5,27 @@ import { useMenuList } from "./libs/store/menu";
 import { Modal } from "./libs/components/modal";
 import Link from "next/link";
 import { MusicPlayer } from "./libs/components/musicPlayer";
+import { useState } from "react";
+import { useMount } from "react-use";
 
 export default function Home() {
   const menulist = useMenuList((state) => state.menulist);
+
+  const [showPlayer, setShowPlayer] = useState(false);
+
+  useMount(() => {
+    if (typeof window === "undefined") return;
+
+    window.addEventListener(
+      "click",
+      () => {
+        setShowPlayer(true);
+      },
+      {
+        once: true,
+      }
+    );
+  });
 
   return (
     <main
@@ -17,7 +35,7 @@ export default function Home() {
         position: "relative",
       }}
     >
-      <MusicPlayer />
+      <MusicPlayer play={showPlayer} />
 
       <SimpleGrid p={["0", "50px"]} w={["100%", "450px"]} columns={2} gap="1">
         {menulist.map((menu, i) => {

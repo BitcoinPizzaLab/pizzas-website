@@ -1,0 +1,21 @@
+.loadingMask {
+    color: #ffffff;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: black;
+}
+
+.enterButton {
+    padding: 10px;
+}
+
+.loadingImg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}

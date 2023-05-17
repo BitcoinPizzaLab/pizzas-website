@@ -1,6 +1,6 @@
-// import { Inter } from 'next/font/google'
 import { Providers } from "./providers";
 import "./libs/styles/global.css";
+import { LoadingMask } from "./libs/components/loadingMask";
 
 export const metadata = {
   title: "Pizzas Lab",
@@ -18,6 +18,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href="/logo.png" />
       </head>
       <body className="h-[100vh] w-[100vw] overflow-hidden">
+        <LoadingMask />
         <Providers>{children}</Providers>
       </body>
     </html>
