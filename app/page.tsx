@@ -90,6 +90,8 @@ export default function Home() {
       >
         <Flex
           className="smokingBg"
+          maxW="800px"
+          maxH="800px"
           w={["90vw", "50vw"]}
           h={["40vh", "50vw"]}
         ></Flex>
