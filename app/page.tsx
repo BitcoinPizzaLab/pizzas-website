@@ -55,10 +55,10 @@ export default function Home() {
         zIndex="-1"
         alt="logo"
         position="fixed"
-        left="50%"
-        bottom={["100px", "50%"]}
-        transform={["translate(-50%, 0)", "translate(-50%, 50%)"]}
-        // p="40px"
+        right="0px"
+        bottom="80px"
+        // bottom={["100px", "50%"]}
+        // transform={["translate(-50%, 0)", "translate(-50%, 50%)"]}
         bg="#000"
         w={["80%", "60%", "40%"]}
         maxW="800px"

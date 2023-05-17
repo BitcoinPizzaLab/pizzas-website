@@ -8,7 +8,7 @@ const Player = dynamic(() => import("react-jinke-music-player"), {
 
 const audioList = [
   {
-    name: "[MapleStory] Ereve Field Theme _Rain Drop Flower_ (NES 8-bit Remix)",
+    name: "Rain Drop Flower (NES 8-bit Remix)",
     singer: "40Nix",
     cover: "/images/music1.png",
     musicSrc:
