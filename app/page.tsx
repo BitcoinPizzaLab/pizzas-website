@@ -4,13 +4,22 @@ import { Box, Center, SimpleGrid, Image, Flex, Text } from "@chakra-ui/react";
 import { useMenuList } from "./libs/store/menu";
 import { Modal } from "./libs/components/modal";
 import Link from "next/link";
+import { MusicPlayer } from "./libs/components/musicPlayer";
 
 export default function Home() {
   const menulist = useMenuList((state) => state.menulist);
 
   return (
-    <main>
-      <SimpleGrid m={["0", "50px"]} w={["100%", "300px"]} columns={2} gap="1">
+    <main
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "relative",
+      }}
+    >
+      <MusicPlayer />
+
+      <SimpleGrid p={["0", "50px"]} w={["100%", "450px"]} columns={2} gap="1">
         {menulist.map((menu, i) => {
           return (
             <Box
@@ -39,13 +48,16 @@ export default function Home() {
       </SimpleGrid>
 
       <Image
+        boxShadow="0 1px 3px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.06);"
+        userSelect="none"
+        draggable="false"
         border="5px solid #fff"
         zIndex="-1"
         alt="logo"
         position="fixed"
         left="50%"
-        bottom={["25%", "50%"]}
-        transform="translate(-50%, 50%)"
+        bottom={["100px", "50%"]}
+        transform={["translate(-50%, 0)", "translate(-50%, 50%)"]}
         // p="40px"
         bg="#000"
         w={["80%", "60%", "40%"]}
