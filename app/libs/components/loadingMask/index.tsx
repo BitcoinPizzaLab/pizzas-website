@@ -3,6 +3,7 @@
 import Image from "next/image";
 import "./index.css";
 import { useState } from "react";
+import loadingImg from "./asciiLogo.gif";
 
 export const LoadingMask = () => {
   const [clicked, setClicked] = useState(false);
@@ -16,7 +17,7 @@ export const LoadingMask = () => {
         width={500}
         height={500}
         alt="logo"
-        src="/images/asciiLogo.gif"
+        src={loadingImg}
       />
     </div>
   );
