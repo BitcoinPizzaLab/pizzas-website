@@ -29,7 +29,7 @@ export const useMenuList = create(
         icon: (
           <Image p="8px" alt="Bitcoin Pizzas" w="full" src="/icon/61.png" />
         ),
-        label: "Pizza Believers",
+        label: "Bitcoin Believers",
         visible: false,
         onClick: () => {
           set((state) => {

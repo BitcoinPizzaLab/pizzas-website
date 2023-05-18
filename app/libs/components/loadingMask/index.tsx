@@ -10,7 +10,7 @@ export const LoadingMask = () => {
   if (clicked) return null;
   return (
     <div onClick={() => setClicked(true)} className="loadingMask">
-      <p className="enterButton">Click to enter the Pizza Lab ...</p>
+      <p className="enterButton">Click to enter the Pizza Labs ...</p>
       <img
         className="loadingImg"
         width={500}
