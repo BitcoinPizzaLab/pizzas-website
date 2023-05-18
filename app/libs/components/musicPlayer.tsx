@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 import { ReactJkMusicPlayerInstance } from "react-jinke-music-player";
 import "react-jinke-music-player/assets/index.css";
+import { useLocalStorage } from "react-use";
 
 const Player = dynamic(() => import("react-jinke-music-player"), {
   ssr: false,
@@ -31,12 +32,13 @@ interface MusicPlayerProps {
 export const MusicPlayer = (props: MusicPlayerProps) => {
   const { play } = props;
   const audioInstanceRef = useRef<ReactJkMusicPlayerInstance | null>(null);
+  const [autoPlay, setAutoplay] = useLocalStorage("autoPlay", true);
 
   useEffect(() => {
-    if (play) {
+    if (play && autoPlay) {
       audioInstanceRef.current?.play();
     }
-  }, [play]);
+  }, [autoPlay, play]);
 
   return (
     <Box right="20px" bottom="20px" position="absolute">
@@ -54,6 +56,8 @@ export const MusicPlayer = (props: MusicPlayerProps) => {
         toggleMode={false}
         showThemeSwitch={false}
         mobileMediaQuery="none"
+        onAudioPause={() => setAutoplay(false)}
+        onAudioPlay={() => setAutoplay(true)}
       />
     </Box>
   );

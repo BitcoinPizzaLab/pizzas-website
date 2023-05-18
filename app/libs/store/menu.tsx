@@ -16,14 +16,7 @@ export const useMenuList = create(
   immer<MenuListStore>((set) => ({
     menulist: [
       {
-        icon: (
-          <Image
-            p="8px"
-            alt="Bitcoin Pizzas"
-            w="full"
-            src="/icon/icons8-pizza.png"
-          />
-        ),
+        icon: <Image p="8px" alt="Bitcoin Pizzas" w="full" src="/icon/1.png" />,
         label: "Bitcoin Pizzas",
         visible: false,
         onClick: () => {
@@ -34,12 +27,7 @@ export const useMenuList = create(
       },
       {
         icon: (
-          <Image
-            p="5px"
-            alt="Bitcoin Pizzas"
-            w="full"
-            src="/icon/believers.png"
-          />
+          <Image p="8px" alt="Bitcoin Pizzas" w="full" src="/icon/61.png" />
         ),
         label: "Pizza Believers",
         visible: false,
@@ -51,7 +39,7 @@ export const useMenuList = create(
       },
       {
         icon: (
-          <Image p="7px" alt="Bitcoin Pizzas" w="full" src="/icon/market.png" />
+          <Image p="12px" alt="Bitcoin Pizzas" w="full" src="/icon/2.png" />
         ),
         label: "Market",
         visible: false,
@@ -62,9 +50,7 @@ export const useMenuList = create(
         },
       },
       {
-        icon: (
-          <Image p="5px" alt="Bitcoin Pizzas" w="full" src="/icon/diary.png" />
-        ),
+        icon: <Image p="8px" alt="Bitcoin Pizzas" w="full" src="/icon/5.png" />,
         label: "Pizza Diary",
         visible: false,
         onClick: () => {
@@ -75,12 +61,7 @@ export const useMenuList = create(
       },
       {
         icon: (
-          <Image
-            p="6px"
-            alt="Bitcoin Pizzas"
-            w="full"
-            src="/icon/twitter.svg"
-          />
+          <Image p="12px" alt="Bitcoin Pizzas" w="full" src="/icon/4.png" />
         ),
         label: "Twitter",
         visible: false,
@@ -90,12 +71,7 @@ export const useMenuList = create(
       },
       {
         icon: (
-          <Image
-            p="6px"
-            alt="Bitcoin Pizzas"
-            w="full"
-            src="/icon/discord.svg"
-          />
+          <Image p="12px" alt="Bitcoin Pizzas" w="full" src="/icon/3.png" />
         ),
         label: "Discord",
         visible: false,
