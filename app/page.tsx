@@ -45,7 +45,7 @@ export default function Home() {
               m="auto"
               p={["0", "10px"]}
               onClick={menu.onClick}
-              w={["110px", "140px"]}
+              w={["140px", "140px"]}
               cursor="pointer"
               userSelect="none"
             >
@@ -163,7 +163,7 @@ export default function Home() {
                 bg="#000"
                 whiteSpace="nowrap"
               >
-                ordinals
+                OW
               </Center>
             </Link>
             <Link
