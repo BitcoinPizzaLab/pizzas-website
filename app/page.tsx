@@ -140,7 +140,7 @@ export default function Home() {
                 bg="#000"
                 whiteSpace="nowrap"
               >
-                magiceden
+                Magic Eden
               </Center>
             </Link>
 

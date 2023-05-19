@@ -16,3 +16,11 @@ const Fonts = () => (
 );
 
 export default Fonts;
+
+// @font-face {
+//   font-family: 'Digit2000';
+//   font-style: normal;
+//   font-weight: 400;
+//   font-display: swap;
+//   src: url('/fonts/CAYETNRI.ttf') format('opentype');
+// }

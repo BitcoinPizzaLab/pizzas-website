@@ -18,10 +18,22 @@ const audioList = [
       "/music/[MapleStory] Ereve Field Theme _Rain Drop Flower_ (NES 8-bit Remix).mp3",
   },
   {
-    name: "sasakure",
-    singer: "sasakure.UK",
+    name: "MapleStory El Nath",
+    singer: "UATitan",
     cover: "/images/music2.jpg",
     musicSrc: "/music/sasakure.mp3",
+  },
+  {
+    name: "sasakure",
+    singer: "sasakure.UK",
+    cover: "/images/music3.png",
+    musicSrc: "/music/music3.mp3",
+  },
+  {
+    name: "MapleStory Cash Shop",
+    singer: "DietTurtleOther",
+    cover: "/images/music4.png",
+    musicSrc: "/music/music4.mp3",
   },
 ];
 
@@ -53,6 +65,7 @@ export const MusicPlayer = (props: MusicPlayerProps) => {
         preload
         mode="full"
         autoPlay
+        playMode="orderLoop"
         toggleMode={false}
         showThemeSwitch={false}
         mobileMediaQuery="none"
