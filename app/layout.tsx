@@ -3,8 +3,8 @@ import "./libs/styles/global.css";
 import { LoadingMask } from "./libs/components/loadingMask";
 
 export const metadata = {
-  title: "Pizzas Lab",
-  description: "Bitcoin Pizzas Lab",
+  title: "Pizza Labs",
+  description: "Bitcoin Pizza Labs",
 };
 
 export default function RootLayout({
