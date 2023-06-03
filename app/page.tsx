@@ -245,6 +245,47 @@ export default function Home() {
               </Center>
             </Link>
 
+            <Link
+              target="_blank"
+              href="https://magiceden.io/ordinals/marketplace/bitcoin-pizzas-pizzaday-2023"
+            >
+              <Image rounded="full" w="full" alt="me" src="/icon/1155.gif" />
+              <Center
+                mt="10px"
+                p="4px 8px"
+                fontSize="12px"
+                fontWeight="bold"
+                color="#fff"
+                bg="#000"
+                whiteSpace="nowrap"
+              >
+                Pizza1155
+              </Center>
+            </Link>
+
+            <Link
+              target="_blank"
+              href="https://magiceden.io/ordinals/marketplace/pixelbirds-pizzaday-2023"
+            >
+              <Image
+                rounded="full"
+                w="full"
+                alt="me"
+                src="/icon/birdss1155.png"
+              />
+              <Center
+                mt="10px"
+                p="4px 8px"
+                fontSize="12px"
+                fontWeight="bold"
+                color="#fff"
+                bg="#000"
+                whiteSpace="nowrap"
+              >
+                Birds1155
+              </Center>
+            </Link>
+
             <Link href="">
               <Image w="full" alt="me" src="/icon/marketComingSoon.png" />
               <Center
