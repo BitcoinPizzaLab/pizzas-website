@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
 import { Image } from "@chakra-ui/react";
 import React from "react";
+import okxWeb3 from "@okwallet/extension";
 
 interface MenuListStore {
   menulist: {
@@ -9,7 +10,13 @@ interface MenuListStore {
     visible: boolean;
     onClick: () => void;
     label: string;
+    close?: () => void;
   }[];
+  walletInfo: {
+    chainName: string;
+    address: string;
+    name: string;
+  };
 }
 
 export const useMenuList = create(
@@ -81,6 +88,31 @@ export const useMenuList = create(
           });
         },
       },
+      {
+        icon: (
+          <Image p="12px" alt="Wallet" w="full" src="/icon/walletIcon.png" />
+        ),
+        label: "OKX Wallet",
+        visible: false,
+        onClick: async () => {
+          const walletInfo = await okxWeb3.init();
+          const bitcoinInfo = walletInfo.addresses["bitcoin"];
+
+          set((state) => {
+            state.walletInfo = {
+              chainName: "Bitcoin",
+              address: bitcoinInfo.address,
+              name: walletInfo.accountName,
+            };
+            state.menulist[6].visible = !state.menulist[6].visible;
+          });
+        },
+        close: () => {
+          set((state) => {
+            state.menulist[6].visible = !state.menulist[6].visible;
+          });
+        },
+      },
       // {
       //   icon: (
       //     <Image p="5px" alt="Bitcoin Pizzas" w="full" src="/icon/log.png" />
@@ -94,5 +126,10 @@ export const useMenuList = create(
       //   },
       // },
     ],
+    walletInfo: {
+      chainName: "",
+      address: "",
+      name: "",
+    },
   }))
 );

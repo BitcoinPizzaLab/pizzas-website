@@ -1,6 +1,14 @@
 "use client";
 
-import { Box, Center, SimpleGrid, Image, Flex, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  SimpleGrid,
+  Image,
+  Flex,
+  Text,
+  useToast,
+} from "@chakra-ui/react";
 import { useMenuList } from "./libs/store/menu";
 import { Modal } from "./libs/components/modal";
 import Link from "next/link";
@@ -10,7 +18,8 @@ import { useMount } from "react-use";
 
 export default function Home() {
   const menulist = useMenuList((state) => state.menulist);
-
+  const walletInfo = useMenuList((state) => state.walletInfo);
+  const toast = useToast();
   const [showPlayer, setShowPlayer] = useState(false);
 
   useMount(() => {
@@ -44,7 +53,31 @@ export default function Home() {
               key={i}
               m="auto"
               p={["0", "10px"]}
-              onClick={menu.onClick}
+              onClick={async () => {
+                if (!window.okexchain) {
+                  toast({
+                    position: "top-right",
+                    title: "Error Message",
+                    description:
+                      "The OKX wallet was not detected in the current environment. Please go to https://www.okx.com/web3 to install it.",
+                    status: "error",
+                    duration: 9000,
+                    isClosable: true,
+                  });
+                }
+                try {
+                  await menu.onClick();
+                } catch (e) {
+                  toast({
+                    position: "top-right",
+                    title: "Error Message",
+                    description: (e as Error).message,
+                    status: "error",
+                    duration: 9000,
+                    isClosable: true,
+                  });
+                }
+              }}
               w={["140px", "140px"]}
               cursor="pointer"
               userSelect="none"
@@ -271,6 +304,25 @@ export default function Home() {
           <Box alignSelf="center">
             <button onClick={menulist[3].onClick}>OK</button>
           </Box>
+        </Flex>
+      </Modal>
+
+      <Modal
+        label={menulist[6].label}
+        isOpen={menulist[6].visible}
+        close={menulist[6].close}
+      >
+        <Flex
+          flexDir="column"
+          maxW="800px"
+          maxH="800px"
+          w={["90vw", "50vw"]}
+          h={["40vh", "50vw"]}
+          p="20px"
+        >
+          <Text>{walletInfo.chainName}</Text>
+          <Text>Account: {walletInfo.name}</Text>
+          <Text>Address: {walletInfo.address}</Text>
         </Flex>
       </Modal>
     </main>
