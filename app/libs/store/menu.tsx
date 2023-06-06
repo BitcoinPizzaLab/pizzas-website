@@ -83,9 +83,7 @@ export const useMenuList = create(
         label: "Discord",
         visible: false,
         onClick: () => {
-          set((state) => {
-            state.menulist[5].visible = !state.menulist[5].visible;
-          });
+          window.open("https://discord.gg/hVgC9mvdXJ");
         },
       },
       {

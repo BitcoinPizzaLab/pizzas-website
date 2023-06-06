@@ -46,7 +46,12 @@ export default function Home() {
     >
       <MusicPlayer play={showPlayer} />
 
-      <SimpleGrid p={["0", "50px"]} w={["100%", "450px"]} columns={2} gap="1">
+      <SimpleGrid
+        p={["0", "50px"]}
+        w={["100%", "450px"]}
+        columns={2}
+        gap={["0", "1"]}
+      >
         {menulist.map((menu, i) => {
           return (
             <Box
@@ -78,11 +83,11 @@ export default function Home() {
                   });
                 }
               }}
-              w={["140px", "140px"]}
+              w={["115px", "140px"]}
               cursor="pointer"
               userSelect="none"
             >
-              <Box p={["20px", "15px"]}>{menu.icon}</Box>
+              <Box p={["10px 10px 0", "15px"]}>{menu.icon}</Box>
               <Center
                 p="4px 8px"
                 fontSize="12px"
@@ -301,28 +306,6 @@ export default function Home() {
               </Center>
             </Link>
           </SimpleGrid>
-        </Flex>
-      </Modal>
-
-      <Modal
-        label={menulist[5].label}
-        isOpen={menulist[5].visible}
-        close={menulist[5].onClick}
-      >
-        <Flex
-          gap="5"
-          flexDirection="column"
-          justifyContent="center"
-          w={["90vw", "50vw"]}
-          h={["120px"]}
-        >
-          <Text alignSelf="center" fontSize="20px">
-            Discord will coming soon.
-          </Text>
-
-          <Box alignSelf="center">
-            <button onClick={menulist[5].onClick}>OK</button>
-          </Box>
         </Flex>
       </Modal>
 
