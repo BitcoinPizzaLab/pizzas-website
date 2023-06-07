@@ -8,12 +8,13 @@ import {
   Flex,
   Text,
   useToast,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import { useMenuList } from "./libs/store/menu";
 import { Modal } from "./libs/components/modal";
 import Link from "next/link";
 import { MusicPlayer } from "./libs/components/musicPlayer";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useMount } from "react-use";
 
 export default function Home() {
@@ -21,7 +22,19 @@ export default function Home() {
   const walletInfo = useMenuList((state) => state.walletInfo);
   const toast = useToast();
   const [showPlayer, setShowPlayer] = useState(false);
+  const variant = useBreakpointValue([
+    {
+      isDesktop: false,
+    },
+    {
+      isDesktop: false,
+    },
+    {
+      isDesktop: true,
+    },
+  ]);
 
+  console.log(variant?.isDesktop);
   useMount(() => {
     if (typeof window === "undefined") return;
 
@@ -35,6 +48,14 @@ export default function Home() {
       }
     );
   });
+
+  const menuListUpdate = useMemo(() => {
+    if (variant?.isDesktop) {
+      return menulist.slice(0, 6);
+    }
+
+    return menulist;
+  }, [menulist, variant]);
 
   return (
     <main
@@ -52,7 +73,7 @@ export default function Home() {
         columns={2}
         gap={["0", "1"]}
       >
-        {menulist.map((menu, i) => {
+        {menuListUpdate.map((menu, i) => {
           return (
             <Box
               key={i}
@@ -102,6 +123,55 @@ export default function Home() {
           );
         })}
       </SimpleGrid>
+
+      <Box
+        hidden={!variant?.isDesktop}
+        position="fixed"
+        right="30px"
+        top="0px"
+        m="auto"
+        p={["0", "10px"]}
+        onClick={async () => {
+          if (!window.okexchain) {
+            toast({
+              position: "top-right",
+              title: "Error Message",
+              description:
+                "The OKX wallet was not detected in the current environment. Please go to https://www.okx.com/web3 to install it.",
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+            });
+          }
+          try {
+            await menulist[6].onClick();
+          } catch (e) {
+            toast({
+              position: "top-right",
+              title: "Error Message",
+              description: (e as Error).message,
+              status: "error",
+              duration: 9000,
+              isClosable: true,
+            });
+          }
+        }}
+        w={["115px", "140px"]}
+        cursor="pointer"
+        userSelect="none"
+      >
+        <Box p={["10px 10px 0", "15px"]}>{menulist[6].icon}</Box>
+        <Center
+          p="4px 8px"
+          fontSize="12px"
+          fontWeight="bold"
+          color="#fff"
+          bg="#000"
+          whiteSpace="nowrap"
+        >
+          {menulist[6].label}
+        </Center>
+      </Box>
 
       <Image
         boxShadow="0 1px 3px 0 rgba(0, 0, 0, 0.1),0 1px 2px 0 rgba(0, 0, 0, 0.06);"
